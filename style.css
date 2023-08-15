@@ -10,6 +10,8 @@ body {
 
 img {
     max-width: 100%;
+    max-width: 50%;
+
 }
 
 /* ==================
@@ -40,6 +42,7 @@ h1, h2, strong {
     margin-top: 1.25em;
 }
 
+/* yellow bar line  */
 .section-title::after {
     content: "";
     display: block;
@@ -50,6 +53,7 @@ h1, h2, strong {
 }
 
 /*cannot do display:center above bcos of display:block so see below*/
+/* also has to give it another class as below */
 .section-title-center::after {
     margin-left: auto;
     margin-right: auto;
@@ -59,7 +63,7 @@ h1, h2, strong {
     margin-top: 0;
 }
 
-
+/* ///in about and contact page */
 .page-title,
 .subtitle {
     grid-column: 2 / -2;
@@ -67,13 +71,13 @@ h1, h2, strong {
     text-align: center;
 }
 
-.page-title {
+.about-title {
     font-size: 3rem;
     margin-bottom: .5em;
     justify-self: center;
 }
 
-.page-title::after {
+.about-title::after {
     content: '';
     display: block;
     width: 100%;
@@ -83,14 +87,14 @@ h1, h2, strong {
     margin-left: 15px;
 }
 
-.subtitle {
+.about-subtitle {
     margin: .5em 0 3em;
     font-size: 1.125rem;
 }
 
 
 /* ==================
-    general layout-start with small screen
+general layout
 ===================== */
 
 .main-grid {
@@ -99,14 +103,14 @@ h1, h2, strong {
     grid-column-gap: 2em;
 }
 
+/* //media for general layout -start with large screen */
 @media (min-width: 600px) {
     .main-grid {
         grid-template-columns: minmax(1em, 1fr) repeat(3, minmax(150px, 320px)) minmax(1em, 1fr);
     }
 }
 
-/* navigation -start with large screen*/
-
+/* navigation */
 .header {
     background: black;
 }
@@ -126,9 +130,13 @@ h1, h2, strong {
 
 .logo-link {
     background-color: #FFE600;
-    padding-top: 2em;
+    /* padding-top: 2em; */
 }
-/*small screen starts here*/
+
+.logo {
+    /* to fit into the background-color size ?? */
+}
+
 .header-home {
     background: transparent;
     position: absolute;
@@ -146,7 +154,8 @@ h1, h2, strong {
     transform: translateX(0);
     transition: transform 250ms;
 }
-/*can find class .navigation-open in js*/
+
+/*find class .navigation-open in js*/
 .navigation-open {
     transform: translateX(-100%);
 }
@@ -199,9 +208,9 @@ h1, h2, strong {
     border-bottom: 1px solid #FFE600;
 }
 
+/* ///// media for the navigation */
 @media (min-width: 600px) {
-    .open-nav,
-    .close-nav {
+    .open-nav, .close-nav {
         display: none;
     }
     
@@ -228,9 +237,7 @@ h1, h2, strong {
 }
 
 
-
-/* buttons */
-
+/* contact button */
 .btn {
     padding: .5em 1.75em;
     font-weight: 700;
@@ -258,7 +265,6 @@ h1, h2, strong {
 
 
 /* footer */
-
 .footer {
     background: #ebebeb;
     padding: 4em 0;
@@ -277,11 +283,12 @@ h1, h2, strong {
 .footer-logo,
 .footer-text,
 .footer-fineprint {
-    opacity: .3;
+    /* opacity: .3; */
 }
 
 .footer-main {
     grid-area: main;
+        opacity: .3;
 }
 
 .footer-fineprint {
@@ -308,6 +315,7 @@ h1, h2, strong {
     color: #777;
 }
 
+/* //////////// media for footer section */
 @media (min-width: 600px) {
     .footer {
         grid-template-areas: 
@@ -328,9 +336,9 @@ h1, h2, strong {
 ===================== */
 
 .hero {
-/*    background-image: url(img/hero-bg.jpg);*/
+   background-image: url(images/hero-bg.jpg);
 	/*background-image: linear-gradient(0deg, black, yellow);*/
-	background-image: url(images/jake.jpg);
+	/* background-image: url(images/jake.jpg); */
 	background-color: gray;
 	background-blend-mode: multiply;
     background-size: cover;
